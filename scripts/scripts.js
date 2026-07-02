@@ -126,6 +126,13 @@ export function decorateMain(main) {
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
+async function loadEager(doc) {
+}
+
+/**
+ * Loads everything that doesn't need to be delayed.
+ * @param {Element} doc The container element
+ */
 async function loadLazy(doc) {
   loadHeader(doc.querySelector('header'));
 
