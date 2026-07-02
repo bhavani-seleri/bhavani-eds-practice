@@ -156,10 +156,6 @@ async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
   
-  document.querySelectorAll('.dark.section').forEach((section) => {
-    section.querySelector('h1')?.classList.add('page-heading');
-    section.querySelector('picture')?.classList.add('page-image');
-  });
 
 
   const { hash } = window.location;
