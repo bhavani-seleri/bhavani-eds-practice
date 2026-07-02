@@ -155,6 +155,12 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+  
+  document.querySelectorAll('.dark.section').forEach((section) => {
+    section.querySelector('h1')?.classList.add('page-heading');
+    section.querySelector('picture')?.classList.add('page-image');
+  });
+
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -181,8 +187,4 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
 }
-document.querySelectorAll('.dark.section').forEach((section) => {
-  section.querySelector('h1')?.classList.add('page-heading');
-  section.querySelector('picture')?.classList.add('page-image');
-});
 loadPage();
