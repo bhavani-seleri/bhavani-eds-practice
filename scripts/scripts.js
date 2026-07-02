@@ -181,5 +181,8 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
 }
-
+document.querySelectorAll('.dark.section').forEach((section) => {
+  section.querySelector('h1')?.classList.add('page-heading');
+  section.querySelector('picture')?.classList.add('page-image');
+});
 loadPage();
