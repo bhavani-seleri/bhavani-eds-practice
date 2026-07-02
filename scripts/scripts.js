@@ -139,6 +139,20 @@ async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
 
+  const darkSections = document.querySelectorAll('.dark');
+
+  darkSections.forEach((section) => {
+    section.querySelectorAll(':scope > *').forEach((element) => {
+      if (element.tagName === 'H1') {
+        element.classList.add('heading');
+      } else if (element.tagName === 'UL') {
+        element.classList.add('food-list');
+      } else if (element.tagName === 'P') {
+        element.classList.add('image-wrapper');
+      }
+    });
+  });
+
   const wrappers = main.querySelectorAll('.default-content-wrapper');
 
   wrappers.forEach((wrapper) => {
@@ -181,7 +195,7 @@ async function loadLazy(doc) {
 
 //   const main = doc.querySelector('main');
 //   await loadSections(main);
-  
+
 
 
 //   const { hash } = window.location;
