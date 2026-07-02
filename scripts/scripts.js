@@ -155,20 +155,6 @@ async function loadLazy(doc) {
     });
   });
 
-  const darkSections = document.querySelectorAll('.dark');
-
-darkSections.forEach((section) => {
-  section.querySelectorAll(':scope > *').forEach((element) => {
-    if (element.tagName === 'H1') {
-      element.classList.add('heading');
-    } else if (element.tagName === 'UL') {
-      element.classList.add('food-list');
-    } else if (element.tagName === 'P') {
-      element.classList.add('image-wrapper');
-    }
-  });
-});
-
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
