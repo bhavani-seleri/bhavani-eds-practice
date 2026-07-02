@@ -183,23 +183,23 @@ darkSections.forEach((section) => {
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
-async function loadLazy(doc) {
-  loadHeader(doc.querySelector('header'));
+// async function loadLazy(doc) {
+//   loadHeader(doc.querySelector('header'));
 
-  const main = doc.querySelector('main');
-  await loadSections(main);
+//   const main = doc.querySelector('main');
+//   await loadSections(main);
   
 
 
-  const { hash } = window.location;
-  const element = hash ? doc.getElementById(hash.substring(1)) : false;
-  if (hash && element) element.scrollIntoView();
+//   const { hash } = window.location;
+//   const element = hash ? doc.getElementById(hash.substring(1)) : false;
+//   if (hash && element) element.scrollIntoView();
 
-  loadFooter(doc.querySelector('footer'));
+//   loadFooter(doc.querySelector('footer'));
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  loadFonts();
-}
+//   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+//   loadFonts();
+// }
 
 /**
  * Loads everything that happens a lot later,
